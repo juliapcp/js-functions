@@ -17,7 +17,15 @@ console.log([2, 4, 6, 7, 9, 10, 11, 16, 18].filter(x => x > 10));
 
 //especificação: não usar split function
 function split(string, separador) {
-    return
+    string += separador;
+    let vet = [];
+    for (let i = 0; i < string.length; i++) {
+        vet.push(string.substring(0, string.indexOf(separador)));
+        string = string.substring(string.indexOf(separador) + 1)
+    }
+    console.log(vet);
+
+    return vet;
 }
 const str = 'abc,def,ghi';
 const vet = split(str, ',');
